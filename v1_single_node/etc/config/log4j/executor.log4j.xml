@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">  
+  
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/' debug="false">  
+  
+  <appender name="ROLLING" class="cn.lucene.plugins.service.executor.api.CLRollingFileAppender">  
+    <layout class="org.apache.log4j.PatternLayout">  
+      <param name="ConversionPattern" value="%d{yyy-MM-dd HH:mm:ss SSS} %c{2} [%p] %m%n"/>  
+    </layout>  
+    <param name="File" value="${spark.yarn.app.container.log.dir}/cl.log"/>  
+    <param name="MaxFileSize" value="200MB"/>  
+    <param name="MaxBackupIndex" value="8"/>  
+  </appender>  
+ 
+  <appender name="ROLLINGERROR" class="org.apache.log4j.RollingFileAppender">  
+    <layout class="org.apache.log4j.PatternLayout">  
+      <param name="ConversionPattern" value="%d{yyy-MM-dd HH:mm:ss SSS} %c{2} [%p] %m%n"/>  
+    </layout>  
+    <param name="File" value="${spark.yarn.app.container.log.dir}/cl.error.log"/>  
+    <param name="MaxFileSize" value="100MB"/>  
+    <param name="MaxBackupIndex" value="8"/>  
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+        <param name="LevelMin" value="ERROR"/>  
+        <param name="LevelMax" value="ERROR"/>  
+    </filter> 
+  </appender>  
+    
+  <appender name="ASYNC" class="org.apache.log4j.AsyncAppender">  
+    <param name="BufferSize" value="102400"/>  
+    <param name="Blocking" value="false"/>  
+    <appender-ref ref="ROLLING"/>  
+  </appender>  
+ 
+  
+  <root>  
+    <level value="info"/>  
+    <appender-ref ref="ASYNC" />  
+    <appender-ref ref="ROLLINGERROR" />  
+
+  </root>  
+
+  <logger name="org.apache.spark.scheduler">  
+    <level value="error"/>   
+  </logger>  
+    
+  <logger name="org.apache.spark.storage">  
+    <level value="error"/>   
+  </logger>  
+</log4j:configuration> 

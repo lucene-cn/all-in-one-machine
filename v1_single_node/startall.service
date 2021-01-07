@@ -1,0 +1,25 @@
+#!/bin/bash 
+# chkconfig: 2345 80 90 
+# description: hadoop service
+# It is used to serve HTML files and CGI. 
+# processname: hadoop 
+# Source function library.
+#rm -f /tmp/*.pid
+#rm -f /tmp1/*.pid
+#rm -f /tmp2/*.pid
+#rm -f /tmp3/*.pid
+#rm -f /opt/software/zookeeper/data/zookeeper_server.pid
+
+#sh /opt/software/hadoop/sbin/start-dfs.sh > /dev/null 2>&1
+#sh /opt/software/hadoop/sbin/start-yarn.sh > /dev/null 2>&1
+#sh /opt/software/hadoop/sbin/hadoop-daemons.sh --config /opt/software/hadoop/etc/hadoop --hostnames minione --script /opt/software/hadoop/sbin/hdfs start namenode > /dev/null 2>&1
+#sh /opt/software/hadoop/sbin/hadoop-daemon.sh --config /opt/software/hadoop/etc/hadoop --script /opt/software/hadoop/sbin/hdfs start datanode > /dev/null 2>&1
+#sh /opt/software/hadoop/sbin/hadoop-daemon2.sh --config /opt/software/hadoop/etc/hadoop2 --script /opt/software/hadoop/sbin/hdfs start datanode > /dev/null 2>&1
+#sh /opt/software/hadoop/sbin/hadoop-daemon3.sh --config /opt/software/hadoop/etc/hadoop3 --script /opt/software/hadoop/sbin/hdfs start datanode > /dev/null 2>&1
+#sh /opt/software/hadoop/sbin/hadoop-daemon4.sh --config /opt/software/hadoop/etc/hadoop4 --script /opt/software/hadoop/sbin/hdfs start datanode > /dev/null 2>&1
+#sh /opt/software/zookeeper/bin/zkServer.sh start > /dev/null 2>&1
+#sleep 10
+#nohup sh /opt/software/kafka/bin/kafka-server-start.sh  /opt/software/kafka/config/server.properties & > /dev/null 2>&1
+#sh /opt/software/lsql/sbin/start.sh > /dev/null 2>&1
+mkdir -p /data/logs/setup
+sh  /opt/software/lx/start.sh >> /data/logs/setup/initstart

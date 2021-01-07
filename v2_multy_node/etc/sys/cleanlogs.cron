@@ -1,0 +1,1 @@
+10 0 * * * sh /opt/software/lx/etc/sys/cleanlogs.sh >/dev/null 2>&1

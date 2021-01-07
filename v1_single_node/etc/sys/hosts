@@ -1,0 +1,14 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+#config_lsql__start
+127.0.0.1 nn.hadoop.lucene.cn
+127.0.0.1 sn.hadoop.lucene.cn
+127.0.0.1 rm.hadoop.lucene.cn
+127.0.0.1 driver.lsql.lucene.cn
+
+127.0.0.1 node1.lucene.cn
+127.0.0.1 zk1.lucene.cn
+127.0.0.1 kafka1.lucene.cn
+127.0.0.1 dn1.hadoop.lucene.cn
+##hostname_placeholder##
+#config_lsql_end

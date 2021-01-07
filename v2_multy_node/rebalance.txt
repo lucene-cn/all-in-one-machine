@@ -1,0 +1,17 @@
+
+kafka--
+	 1.这是一个样例 里面包含了需要生成再平衡需要的topic,放入到topics-to-ge.json
+	{"topics": [{"topic": "foo1"},
+				{"topic": "foo2"}],
+	"version":1
+	}
+
+	2. 下面命令根据1的文件生成需要执行的数据移动配置
+	   ./kafka-reassign-partitions.sh --zookeeper 192.168.0.125:2181 --topics-to-move-json-file ./topics-to-ge.json --broker-list "1,2" --generate
+
+	3. 拷贝Proposed partition reassignment configuration 以下的json内容到target.json
+	4.执行target.json
+	  ./kafka-reassign-partitions.sh --zookeeper 192.168.0.125:2181 --reassignment-json-file ./target.json --execute
+	5.验证进度
+	./kafka-reassign-partitions.sh --zookeeper 192.168.0.125:2181 --reassignment-json-file ./target.json --verify
+hadoop--

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+
+
+  
+    <property>
+    <name>hive.metastore.warehouse.dir</name>
+    <value>/user/hive/warehouse</value>
+    <description>location of default database for the warehouse</description>
+  </property>
+  
+  
+  
+  <property>
+    <name>hive.mapred.supports.subdirectories</name>
+    <value>true</value>
+  </property>
+  
+
+   <property>
+    <name>hive.server2.thrift.min.worker.threads</name>
+    <value>0</value>
+  </property>
+  
+  <property>
+    <name>hive.server2.thrift.max.worker.threads</name>
+    <value>1024</value>
+  </property>
+  
+  <property>
+    <name>hive.server2.async.exec.threads</name>
+    <value>300</value>
+  </property>
+  
+   <property>
+    <name>hive.metastore.rawstore.impl</name>
+    <value>cn.lucene.proguard.api.CLObjectStore</value>
+  </property>
+  
+  <property>
+    <name>hive.server2.logging.operation.enabled</name>
+    <value>false</value>
+  </property>
+  
+  <property>
+    <name>hive.server2.long.polling.timeout</name>
+    <value>100ms</value>
+  </property>
+  
+  
+  <property>
+    <name>hive.server2.custom.authentication.class</name>
+    <value>cn.lucene.plugins.service.sql.auth.password.Authticator</value>
+  </property>
+
+<property>
+    <name>hive.server2.authentication</name>
+    <value>CUSTOM</value>
+  </property>
+  
+  <property>
+      <name>fs.hdfs.impl.disable.cache</name>
+      <value>true</value>
+   </property>
+   <property>
+      <name>fs.file.impl.disable.cache</name>
+      <value>true</value>
+   </property>
+  
+</configuration>
