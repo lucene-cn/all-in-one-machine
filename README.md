@@ -1,1 +1,1 @@
-# all-in-one-machine
+#录信一体机脚本
