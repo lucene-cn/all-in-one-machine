@@ -64,6 +64,17 @@ echo "mkdir finish"
 rm -f /opt/software/hadoop/share/hadoop/hdfs/hadoop-hdfs-2.8.5.jar
 cp ${LX_HOME_DIR}/patch/hadoop-hdfs-2.8.5.jar /opt/software/hadoop/share/hadoop/hdfs/
 
+rm -f /opt/software/hadoop/share/hadoop/common/hadoop-common-2.8.5.jar
+cp ${LX_HOME_DIR}/patch/hadoop-common-2.8.5.jar /opt/software/hadoop/share/hadoop/common/
+
+rm -f /opt/software/hadoop/share/hadoop/hdfs/hadoop-hdfs-client-2.8.5.jar
+cp ${LX_HOME_DIR}/patch/hadoop-hdfs-client-2.8.5.jar /opt/software/hadoop/share/hadoop/hdfs/
+
+rm -f /opt/software/hadoop/share/hadoop/hdfs/lib/hadoop-hdfs-client-2.8.5.jar
+cp ${LX_HOME_DIR}/patch/hadoop-hdfs-client-2.8.5.jar /opt/software/hadoop/share/hadoop/hdfs/lib/
+
+
+
 
 rm -rf /opt/software/lsql/test
 cp -rf ${LX_HOME_DIR}/test  /opt/software/lsql/test

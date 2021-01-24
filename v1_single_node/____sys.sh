@@ -14,7 +14,7 @@ ulimit -SHn 1000000
 ulimit -a
 
 
-
+echo 3 > /proc/sys/vm/drop_caches
 
 #setup system env
 echo never > /sys/kernel/mm/transparent_hugepage/defrag 
